@@ -48,9 +48,11 @@ class KapacitorProvides(RelationBase):
         conv.remove_state('{relation_name}.connected')
 
 
-    def configure(self, host, port):
+    def configure(self, host, port, username, password):
         relation_info = {
             'host': host,     
-            'port': port}
+            'port': port,
+            'username': username,
+            'password': password}
         for conv in self.conversations():
             conv.set_remote(**relation_info)
