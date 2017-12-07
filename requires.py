@@ -21,7 +21,7 @@ from charms.reactive import scopes
 
 class KapacitorRequires(RelationBase):
     scope = scopes.UNIT
-    auto_accessors = ['host', 'port', 'user', 'password']
+    auto_accessors = ['host', 'port', 'username', 'password']
 
 
     @hook('{requires:kapacitor}-relation-joined')

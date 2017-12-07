@@ -48,7 +48,7 @@ class KapacitorProvides(RelationBase):
         conv.remove_state('{relation_name}.available')
 
 
-    def configure(self, host, port, username=none, password=none):
+    def configure(self, host, port, username=None, password=None):
         relation_info = {
             'host': host,     
             'port': port,
