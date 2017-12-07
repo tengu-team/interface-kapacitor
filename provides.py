@@ -39,16 +39,16 @@ class KapacitorProvides(RelationBase):
     def broken(self):
         conv = self.conversation()
         conv.set_state('{relation_name}.broken')
-        conv.remove_state('{relation_name}.available')
+        conv.remove_state('{relation_name}.connected')
 
     @hook('{provides:kapacitor}-relation-departed')
     def departed(self):
         conv = self.conversation()
         conv.set_state('{relation_name}.departed')
-        conv.remove_state('{relation_name}.connected')
+        conv.remove_state('{relation_name}.available')
 
 
-    def configure(self, host, port, username, password):
+    def configure(self, host, port, username=none, password=none):
         relation_info = {
             'host': host,     
             'port': port,

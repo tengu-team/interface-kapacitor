@@ -41,13 +41,13 @@ class KapacitorRequires(RelationBase):
     def broken(self):
         conv = self.conversation()
         conv.set_state('{relation_name}.broken')
-        conv.remove_state('{relation_name}.available')
+        conv.remove_state('{relation_name}.connected')
 
     @hook('{requires:kapacitor}-relation-departed')
     def departed(self):
         conv = self.conversation()
         conv.set_state('{relation_name}.departed')
-        conv.remove_state('{relation_name}.connected')
+        conv.remove_state('{relation_name}.available')
 
 
     def relation_data(self):
